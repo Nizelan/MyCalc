@@ -9,12 +9,13 @@
 /* Begin PBXBuildFile section */
 		995B79132453456B005C864C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995B79122453456B005C864C /* AppDelegate.swift */; };
 		995B79152453456B005C864C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995B79142453456B005C864C /* SceneDelegate.swift */; };
-		995B79172453456C005C864C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995B79162453456C005C864C /* ViewController.swift */; };
+		995B79172453456C005C864C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995B79162453456C005C864C /* MainViewController.swift */; };
 		995B791A2453456C005C864C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 995B79182453456C005C864C /* Main.storyboard */; };
 		995B791C2453458A005C864C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 995B791B2453458A005C864C /* Assets.xcassets */; };
 		995B791F2453458A005C864C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 995B791D2453458A005C864C /* LaunchScreen.storyboard */; };
 		995B792A2453458B005C864C /* myCalcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995B79292453458B005C864C /* myCalcTests.swift */; };
 		995B79352453458B005C864C /* myCalcUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995B79342453458B005C864C /* myCalcUITests.swift */; };
+		99690C61245DC81300220841 /* CalcModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99690C60245DC81300220841 /* CalcModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +39,7 @@
 		995B790F2453456B005C864C /* myCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		995B79122453456B005C864C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		995B79142453456B005C864C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		995B79162453456C005C864C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		995B79162453456C005C864C /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		995B79192453456C005C864C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		995B791B2453458A005C864C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		995B791E2453458A005C864C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +50,7 @@
 		995B79302453458B005C864C /* myCalcUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myCalcUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		995B79342453458B005C864C /* myCalcUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myCalcUITests.swift; sourceTree = "<group>"; };
 		995B79362453458B005C864C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		99690C60245DC81300220841 /* CalcModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,12 +101,11 @@
 		995B79112453456B005C864C /* myCalc */ = {
 			isa = PBXGroup;
 			children = (
-				995B79122453456B005C864C /* AppDelegate.swift */,
-				995B79142453456B005C864C /* SceneDelegate.swift */,
-				995B79162453456C005C864C /* ViewController.swift */,
-				995B79182453456C005C864C /* Main.storyboard */,
+				99690C65245DC89200220841 /* view */,
+				99690C64245DC86600220841 /* Data */,
+				99690C62245DC82F00220841 /* ViewControllers */,
+				99690C63245DC85E00220841 /* Supurt */,
 				995B791B2453458A005C864C /* Assets.xcassets */,
-				995B791D2453458A005C864C /* LaunchScreen.storyboard */,
 				995B79202453458A005C864C /* Info.plist */,
 			);
 			path = myCalc;
@@ -126,6 +127,40 @@
 				995B79362453458B005C864C /* Info.plist */,
 			);
 			path = myCalcUITests;
+			sourceTree = "<group>";
+		};
+		99690C62245DC82F00220841 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				995B79162453456C005C864C /* MainViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		99690C63245DC85E00220841 /* Supurt */ = {
+			isa = PBXGroup;
+			children = (
+				995B79142453456B005C864C /* SceneDelegate.swift */,
+				995B79122453456B005C864C /* AppDelegate.swift */,
+			);
+			path = Supurt;
+			sourceTree = "<group>";
+		};
+		99690C64245DC86600220841 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				99690C60245DC81300220841 /* CalcModel.swift */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		99690C65245DC89200220841 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				995B79182453456C005C864C /* Main.storyboard */,
+				995B791D2453458A005C864C /* LaunchScreen.storyboard */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,6 +225,10 @@
 		995B79072453456B005C864C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					0,
+					1,
+				);
 				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = Nizelan;
@@ -259,8 +298,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				995B79172453456C005C864C /* ViewController.swift in Sources */,
+				995B79172453456C005C864C /* MainViewController.swift in Sources */,
 				995B79132453456B005C864C /* AppDelegate.swift in Sources */,
+				99690C61245DC81300220841 /* CalcModel.swift in Sources */,
 				995B79152453456B005C864C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

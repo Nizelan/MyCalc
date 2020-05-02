@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="myCalc" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="Lc4-bj-C4u">
+                                <rect key="frame" x="20" y="146" width="335" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="vDJ-3R-OQe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sg5-no-djw">
+                                <rect key="frame" x="20" y="201" width="80.333333333333329" height="71.333333333333314"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="sg5-no-djw" secondAttribute="height" multiplier="9:8" id="Pdi-XG-bLc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <state key="normal" title="C">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="cleenButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YBv-R2-w3e"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cwI-s6-rp0">
+                                <rect key="frame" x="190.66666666666666" y="201" width="79.999999999999972" height="71.333333333333314"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <state key="normal" image="delete.left.fill" catalog="system">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="backspaceButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wDG-4r-ELS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pB8-pO-jdg">
+                                <rect key="frame" x="105.33333333333334" y="201" width="80.333333333333343" height="71.333333333333314"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <state key="normal" title="±">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="minusButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ers-6x-GbP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h6E-eP-peW">
+                                <rect key="frame" x="20" y="277.33333333333331" width="80.333333333333329" height="71.333333333333314"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <state key="normal" title="7">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="numberButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nVV-L6-QyS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MLW-1s-nJv">
+                                <rect key="frame" x="105.33333333333334" y="430" width="80.333333333333343" height="71.333333333333314"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <state key="normal" title="2">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="numberButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="in3-BS-QzN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Hq-96-DUm">
+                                <rect key="frame" x="20" y="430" width="80.333333333333329" height="71.333333333333314"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <state key="normal" title="1">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="numberButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="reC-cB-q4b"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UNB-2d-UhX">
+                                <rect key="frame" x="190.66666666666666" y="353.66666666666669" width="79.999999999999972" height="71.333333333333314"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <state key="normal" title="6">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="numberButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JnC-TF-KJD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9kh-LF-CQY">
+                                <rect key="frame" x="105.33333333333334" y="353.66666666666669" width="80.333333333333343" height="71.333333333333314"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <state key="normal" title="5">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="numberButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CvG-XM-lfL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QHE-K6-1sK">
+                                <rect key="frame" x="20" y="353.66666666666669" width="80.333333333333329" height="71.333333333333314"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <state key="normal" title="4">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="numberButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zey-at-Yoa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXu-qf-v0f">
+                                <rect key="frame" x="190.66666666666666" y="277.33333333333331" width="79.999999999999972" height="71.333333333333314"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <state key="normal" title="9">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="numberButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bQS-td-fvl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X1g-VI-Kdu">
+                                <rect key="frame" x="105.33333333333334" y="277.33333333333331" width="80.333333333333343" height="71.333333333333314"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <state key="normal" title="8">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="numberButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KRm-Gm-Uwj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vu2-Gb-7ev">
+                                <rect key="frame" x="190.66666666666666" y="430" width="79.999999999999972" height="71.333333333333314"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <state key="normal" title="3">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="numberButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lcq-Ml-eld"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lcM-rj-x7c">
+                                <rect key="frame" x="274.66666666666669" y="430" width="80.333333333333314" height="71.333333333333314"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <state key="normal" title="+">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="additButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="paG-EG-Rxl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VNJ-4W-5XV">
+                                <rect key="frame" x="274.66666666666669" y="353.66666666666669" width="80.333333333333314" height="71.333333333333314"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <state key="normal" title="-">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="subtracButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Sc-gI-SVh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UeS-J1-xnP">
+                                <rect key="frame" x="274.66666666666669" y="277.33333333333331" width="80.333333333333314" height="71.333333333333314"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <state key="normal" title="x">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="multipleButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bMg-p5-376"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m9Y-lj-O4N">
+                                <rect key="frame" x="274.66666666666669" y="506.33333333333331" width="80.333333333333314" height="71.333333333333314"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <state key="normal" title="=">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="equalButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ide-1Z-bgS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Abd-4e-Sjv">
+                                <rect key="frame" x="190.66666666666666" y="506.33333333333331" width="79.999999999999972" height="71.333333333333314"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <state key="normal" title=".">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="dotTapButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rBZ-TQ-h4T"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hHt-tu-S0E">
+                                <rect key="frame" x="274.66666666666669" y="201" width="80.333333333333314" height="71.333333333333314"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <state key="normal" title="÷">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="divisionButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AEN-B4-twN"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="qqh-fS-tGL">
+                                <rect key="frame" x="20" y="74" width="335" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Mks-OK-620"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SzJ-xS-YD1">
+                                <rect key="frame" x="20" y="506.33333333333331" width="165.66666666666666" height="71.333333333333314"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <state key="normal" title="0">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="numberButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uyH-Ss-4Us"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <constraints>
+                            <constraint firstItem="UeS-J1-xnP" firstAttribute="leading" secondItem="gXu-qf-v0f" secondAttribute="trailing" constant="4" id="0sn-Ag-Fca"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hHt-tu-S0E" secondAttribute="trailing" constant="20" id="12z-7H-9eD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VNJ-4W-5XV" secondAttribute="trailing" constant="20" id="1de-LG-zgR"/>
+                            <constraint firstItem="qqh-fS-tGL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="4X7-BR-DYV"/>
+                            <constraint firstItem="VNJ-4W-5XV" firstAttribute="leading" secondItem="UNB-2d-UhX" secondAttribute="trailing" constant="4" id="5Ae-dG-dF4"/>
+                            <constraint firstItem="QHE-K6-1sK" firstAttribute="height" secondItem="sg5-no-djw" secondAttribute="height" id="5Dz-UR-VCA"/>
+                            <constraint firstItem="Lc4-bj-C4u" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="5pW-2t-YwO"/>
+                            <constraint firstItem="UNB-2d-UhX" firstAttribute="width" secondItem="sg5-no-djw" secondAttribute="width" id="6f2-le-BzG"/>
+                            <constraint firstItem="h6E-eP-peW" firstAttribute="width" secondItem="sg5-no-djw" secondAttribute="width" id="7Q6-NY-0cF"/>
+                            <constraint firstItem="VNJ-4W-5XV" firstAttribute="width" secondItem="sg5-no-djw" secondAttribute="width" id="84p-Zm-Xzg"/>
+                            <constraint firstItem="cwI-s6-rp0" firstAttribute="height" secondItem="sg5-no-djw" secondAttribute="height" id="8aR-rc-ZrF"/>
+                            <constraint firstItem="UNB-2d-UhX" firstAttribute="top" secondItem="gXu-qf-v0f" secondAttribute="bottom" constant="5" id="9eW-vR-z9V"/>
+                            <constraint firstItem="Abd-4e-Sjv" firstAttribute="width" secondItem="sg5-no-djw" secondAttribute="width" id="ARd-2U-YKh"/>
+                            <constraint firstItem="h6E-eP-peW" firstAttribute="top" secondItem="sg5-no-djw" secondAttribute="bottom" constant="5" id="AZf-y9-iAS"/>
+                            <constraint firstItem="h6E-eP-peW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="BDp-Jq-VfG"/>
+                            <constraint firstItem="Abd-4e-Sjv" firstAttribute="height" secondItem="SzJ-xS-YD1" secondAttribute="height" id="C68-tv-swm"/>
+                            <constraint firstItem="Vu2-Gb-7ev" firstAttribute="leading" secondItem="MLW-1s-nJv" secondAttribute="trailing" constant="5" id="D2y-nX-N0z"/>
+                            <constraint firstItem="lcM-rj-x7c" firstAttribute="height" secondItem="sg5-no-djw" secondAttribute="height" id="DRI-fd-FKT"/>
+                            <constraint firstItem="pB8-pO-jdg" firstAttribute="leading" secondItem="sg5-no-djw" secondAttribute="trailing" constant="5" id="E4r-G1-c2x"/>
+                            <constraint firstItem="cwI-s6-rp0" firstAttribute="width" secondItem="sg5-no-djw" secondAttribute="width" id="EGf-gu-CNy"/>
+                            <constraint firstItem="lcM-rj-x7c" firstAttribute="top" secondItem="VNJ-4W-5XV" secondAttribute="bottom" constant="5" id="EPQ-DO-4Lj"/>
+                            <constraint firstItem="gXu-qf-v0f" firstAttribute="width" secondItem="sg5-no-djw" secondAttribute="width" id="EsL-p8-exI"/>
+                            <constraint firstItem="Vu2-Gb-7ev" firstAttribute="height" secondItem="sg5-no-djw" secondAttribute="height" id="FFe-2S-i0n"/>
+                            <constraint firstItem="VNJ-4W-5XV" firstAttribute="height" secondItem="sg5-no-djw" secondAttribute="height" id="GZp-aU-03l"/>
+                            <constraint firstItem="SzJ-xS-YD1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Haf-bF-w05"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UeS-J1-xnP" secondAttribute="trailing" constant="20" id="J5t-nu-cBJ"/>
+                            <constraint firstItem="cwI-s6-rp0" firstAttribute="leading" secondItem="pB8-pO-jdg" secondAttribute="trailing" constant="5" id="Kyx-4f-M10"/>
+                            <constraint firstItem="gXu-qf-v0f" firstAttribute="top" secondItem="cwI-s6-rp0" secondAttribute="bottom" constant="5" id="LaI-IP-Fny"/>
+                            <constraint firstItem="QHE-K6-1sK" firstAttribute="top" secondItem="h6E-eP-peW" secondAttribute="bottom" constant="5" id="MQF-tK-3Fr"/>
+                            <constraint firstItem="9kh-LF-CQY" firstAttribute="leading" secondItem="QHE-K6-1sK" secondAttribute="trailing" constant="5" id="NHf-C1-8UL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qqh-fS-tGL" secondAttribute="trailing" constant="20" id="NOX-60-GI8"/>
+                            <constraint firstItem="m9Y-lj-O4N" firstAttribute="height" secondItem="sg5-no-djw" secondAttribute="height" id="NyJ-EA-RiU"/>
+                            <constraint firstItem="lcM-rj-x7c" firstAttribute="width" secondItem="sg5-no-djw" secondAttribute="width" id="Oy8-RT-hmq"/>
+                            <constraint firstItem="X1g-VI-Kdu" firstAttribute="leading" secondItem="h6E-eP-peW" secondAttribute="trailing" constant="5" id="P4Q-Es-408"/>
+                            <constraint firstItem="lcM-rj-x7c" firstAttribute="leading" secondItem="Vu2-Gb-7ev" secondAttribute="trailing" constant="4" id="Pgp-2a-yhg"/>
+                            <constraint firstItem="UeS-J1-xnP" firstAttribute="width" secondItem="sg5-no-djw" secondAttribute="width" id="Pi9-Fn-Sc6"/>
+                            <constraint firstItem="0Hq-96-DUm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="QBN-01-wkm"/>
+                            <constraint firstItem="h6E-eP-peW" firstAttribute="height" secondItem="sg5-no-djw" secondAttribute="height" id="QTM-9G-7vZ"/>
+                            <constraint firstItem="Abd-4e-Sjv" firstAttribute="leading" secondItem="SzJ-xS-YD1" secondAttribute="trailing" constant="5" id="Qva-uO-whc"/>
+                            <constraint firstItem="cwI-s6-rp0" firstAttribute="top" secondItem="Lc4-bj-C4u" secondAttribute="bottom" constant="5" id="QwX-zm-rKa"/>
+                            <constraint firstItem="QHE-K6-1sK" firstAttribute="width" secondItem="sg5-no-djw" secondAttribute="width" id="SZR-Bw-IKY"/>
+                            <constraint firstItem="MLW-1s-nJv" firstAttribute="height" secondItem="sg5-no-djw" secondAttribute="height" id="TXk-tA-UWO"/>
+                            <constraint firstItem="X1g-VI-Kdu" firstAttribute="top" secondItem="pB8-pO-jdg" secondAttribute="bottom" constant="5" id="Uop-vO-6Mn"/>
+                            <constraint firstItem="sg5-no-djw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Uv3-ia-EN2"/>
+                            <constraint firstItem="pB8-pO-jdg" firstAttribute="top" secondItem="Lc4-bj-C4u" secondAttribute="bottom" constant="5" id="UvL-Gy-zoo"/>
+                            <constraint firstItem="0Hq-96-DUm" firstAttribute="width" secondItem="sg5-no-djw" secondAttribute="width" id="V13-Ng-3jT"/>
+                            <constraint firstItem="UeS-J1-xnP" firstAttribute="top" secondItem="hHt-tu-S0E" secondAttribute="bottom" constant="5" id="W3H-2G-Io8"/>
+                            <constraint firstItem="MLW-1s-nJv" firstAttribute="top" secondItem="9kh-LF-CQY" secondAttribute="bottom" constant="5" id="XY5-uX-hAW"/>
+                            <constraint firstItem="QHE-K6-1sK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Zeh-d9-AA4"/>
+                            <constraint firstItem="hHt-tu-S0E" firstAttribute="width" secondItem="sg5-no-djw" secondAttribute="width" id="bFG-5T-boc"/>
+                            <constraint firstItem="UNB-2d-UhX" firstAttribute="leading" secondItem="9kh-LF-CQY" secondAttribute="trailing" constant="5" id="bQ7-Wp-5qK"/>
+                            <constraint firstItem="gXu-qf-v0f" firstAttribute="height" secondItem="sg5-no-djw" secondAttribute="height" id="bdz-6X-h3A"/>
+                            <constraint firstItem="m9Y-lj-O4N" firstAttribute="width" secondItem="sg5-no-djw" secondAttribute="width" id="bky-Wg-ME1"/>
+                            <constraint firstItem="Lc4-bj-C4u" firstAttribute="top" secondItem="qqh-fS-tGL" secondAttribute="bottom" constant="22" id="br1-5w-3Ez"/>
+                            <constraint firstItem="hHt-tu-S0E" firstAttribute="top" secondItem="Lc4-bj-C4u" secondAttribute="bottom" constant="5" id="cO3-HH-g9w"/>
+                            <constraint firstItem="X1g-VI-Kdu" firstAttribute="width" secondItem="sg5-no-djw" secondAttribute="width" id="cvS-64-W9P"/>
+                            <constraint firstItem="sg5-no-djw" firstAttribute="top" secondItem="Lc4-bj-C4u" secondAttribute="bottom" constant="5" id="cxf-oU-Sif"/>
+                            <constraint firstItem="UNB-2d-UhX" firstAttribute="height" secondItem="sg5-no-djw" secondAttribute="height" id="d5Z-5C-1Uh"/>
+                            <constraint firstItem="X1g-VI-Kdu" firstAttribute="height" secondItem="sg5-no-djw" secondAttribute="height" id="dwf-mk-Je4"/>
+                            <constraint firstItem="UeS-J1-xnP" firstAttribute="height" secondItem="sg5-no-djw" secondAttribute="height" id="dyi-Qf-Vbb"/>
+                            <constraint firstItem="Abd-4e-Sjv" firstAttribute="height" secondItem="sg5-no-djw" secondAttribute="height" id="eKy-bh-4BL"/>
+                            <constraint firstItem="SzJ-xS-YD1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="eMZ-vC-iRy"/>
+                            <constraint firstItem="SzJ-xS-YD1" firstAttribute="top" secondItem="MLW-1s-nJv" secondAttribute="bottom" constant="5" id="fDI-nz-a1L"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lcM-rj-x7c" secondAttribute="trailing" constant="20" id="fdf-hx-qK0"/>
+                            <constraint firstItem="SzJ-xS-YD1" firstAttribute="top" secondItem="MLW-1s-nJv" secondAttribute="bottom" constant="5" id="gO2-9a-Pwd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="m9Y-lj-O4N" secondAttribute="trailing" constant="20" id="iZe-bt-XaP"/>
+                            <constraint firstItem="Abd-4e-Sjv" firstAttribute="top" secondItem="Vu2-Gb-7ev" secondAttribute="bottom" constant="5" id="ili-AY-n7M"/>
+                            <constraint firstItem="pB8-pO-jdg" firstAttribute="width" secondItem="sg5-no-djw" secondAttribute="width" id="kNC-iU-jQq"/>
+                            <constraint firstItem="VNJ-4W-5XV" firstAttribute="top" secondItem="UeS-J1-xnP" secondAttribute="bottom" constant="5" id="l6l-ah-14r"/>
+                            <constraint firstItem="m9Y-lj-O4N" firstAttribute="leading" secondItem="Abd-4e-Sjv" secondAttribute="trailing" constant="4" id="lfj-wO-EDy"/>
+                            <constraint firstItem="m9Y-lj-O4N" firstAttribute="top" secondItem="lcM-rj-x7c" secondAttribute="bottom" constant="5" id="lp6-F1-JOK"/>
+                            <constraint firstItem="MLW-1s-nJv" firstAttribute="leading" secondItem="0Hq-96-DUm" secondAttribute="trailing" constant="5" id="mYE-ud-xah"/>
+                            <constraint firstItem="hHt-tu-S0E" firstAttribute="height" secondItem="sg5-no-djw" secondAttribute="height" id="mg8-iS-4lw"/>
+                            <constraint firstItem="Vu2-Gb-7ev" firstAttribute="width" secondItem="sg5-no-djw" secondAttribute="width" id="nkG-S4-8ie"/>
+                            <constraint firstItem="MLW-1s-nJv" firstAttribute="width" secondItem="sg5-no-djw" secondAttribute="width" id="oAX-ep-R0y"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Lc4-bj-C4u" secondAttribute="trailing" constant="20" id="oVv-bt-8mz"/>
+                            <constraint firstItem="0Hq-96-DUm" firstAttribute="height" secondItem="sg5-no-djw" secondAttribute="height" id="pZk-tC-HWO"/>
+                            <constraint firstItem="9kh-LF-CQY" firstAttribute="height" secondItem="sg5-no-djw" secondAttribute="height" id="qyC-yy-81e"/>
+                            <constraint firstItem="pB8-pO-jdg" firstAttribute="height" secondItem="sg5-no-djw" secondAttribute="height" id="r20-ER-sF6"/>
+                            <constraint firstItem="qqh-fS-tGL" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="74" id="rQf-JL-ExJ"/>
+                            <constraint firstItem="gXu-qf-v0f" firstAttribute="leading" secondItem="X1g-VI-Kdu" secondAttribute="trailing" constant="5" id="sJE-jp-WS4"/>
+                            <constraint firstItem="0Hq-96-DUm" firstAttribute="top" secondItem="QHE-K6-1sK" secondAttribute="bottom" constant="5" id="ukq-Ia-HM2"/>
+                            <constraint firstItem="hHt-tu-S0E" firstAttribute="leading" secondItem="cwI-s6-rp0" secondAttribute="trailing" constant="4" id="vfp-7d-Zi2"/>
+                            <constraint firstItem="Abd-4e-Sjv" firstAttribute="leading" secondItem="SzJ-xS-YD1" secondAttribute="trailing" constant="5" id="wvH-rY-zq2"/>
+                            <constraint firstItem="9kh-LF-CQY" firstAttribute="width" secondItem="sg5-no-djw" secondAttribute="width" id="xD4-ag-Z2A"/>
+                            <constraint firstItem="9kh-LF-CQY" firstAttribute="top" secondItem="X1g-VI-Kdu" secondAttribute="bottom" constant="5" id="xWg-jv-PBM"/>
+                            <constraint firstItem="Vu2-Gb-7ev" firstAttribute="top" secondItem="UNB-2d-UhX" secondAttribute="bottom" constant="5" id="z7x-hT-9MA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="label" destination="Lc4-bj-C4u" id="f6k-Yw-ilm"/>
+                        <outlet property="upperLabel" destination="qqh-fS-tGL" id="iOx-e9-NCd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="129.91071428571428"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="delete.left.fill" catalog="system" width="64" height="52"/>
+    </resources>
+</document>
