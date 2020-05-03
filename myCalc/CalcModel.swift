@@ -8,34 +8,50 @@
 
 import UIKit
 
-class CalcModel: UIViewController {
+class CalcModel {
+    
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
+    
+    func isAction(character: Character) -> Bool {
+        return character == "/" || character == "*" || character == "-" || character == "+"
     }
     
-    func findEqual(string: String) -> Int {
-        var arr = [Character]()
-        var first: String = ""
-        var second: String = ""
-        var action: Character
-        
-        for character in string {
-            arr.append(character)
-        }
-        
-        for i in 0..<arr.count {
-            if arr[i] != "+" || arr[i] != "-" || arr[i] != "*" || arr[i] != "/" {
-                first += String(arr[i])
-            } else {
-                action = arr[i]
+    public func findEqual(string: String) -> Double {
+        var string = string
+        var value: Double = 0
+    
+        while string.contains("-") || string.contains("+") || string.contains("/") || string.contains("*") {
+            var first: String = ""
+            var second: String = ""
+            var action: Character?
+            
+            for character in string {
+                if isAction(character: character) == false && action == nil {
+                    first += String(character)
+                    string.removeFirst(1)
+                } else if isAction(character: character) == true && action == nil{
+                    action = character
+                    string.removeFirst(1)
+                } else if isAction(character: character) == false && action != nil {
+                    second += String(character)
+                    string.removeFirst(1)
+                } else if isAction(character: character) == true && action != nil {
+                    break
+                }
             }
-            if arr[i] != "+" || arr[i] != "-" || arr[i] != "*" || arr[i] != "/" {
-                second += String(arr[i])
+            switch action {
+            case "/":
+                value = Double(first)! / Double(second)!
+            case "*":
+                value = Double(first)! * Double(second)!
+            case "-":
+                value = Double(first)! - Double(second)!
+            case "+":
+                value = Double(first)! + Double(second)!
+            default: break
             }
+            string = String(value) + string
         }
-        
-        return 0
+        return value
     }
 }

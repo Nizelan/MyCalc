@@ -22,11 +22,10 @@ class MainViewController: UIViewController {
     var magOperandOne: Double?
     var magOperandTwo: Double = 0
     var equalOperand: Double?
-    var action: MathematicalOperation?
+    public var action: MathematicalOperation?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+    let model = CalcModel()
+    
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var upperLabel: UILabel!
     
@@ -66,47 +65,34 @@ class MainViewController: UIViewController {
 
     // Action Buttons logic
     @IBAction func divisionButton(_ sender: UIButton) {
-        
-        
+        action = .divide
+        upperLabel.text = upperLabel.text! + label.text! + "/"
+        label.text = ""
     }
     @IBAction func multipleButton(_ sender: UIButton) {
-        
-        
+        action = .multiply
+        upperLabel.text = upperLabel.text! + label.text! + "*"
+        label.text = ""
     }
     @IBAction func subtracButton(_ sender: UIButton) {
-       
-        
+        action = .substract
+        upperLabel.text = upperLabel.text! + label.text! + "-"
+        label.text = ""
     }
     @IBAction func additButton(_ sender: UIButton) {
-        
-    
+        action = .add
+        upperLabel.text = upperLabel.text! + label.text! + "+"
+        label.text = ""
     }
     
 // Equal Button ligic
     @IBAction func equalButton(_ sender: UIButton) {
+        upperLabel.text = upperLabel.text! + label.text!
+        var qwer: String = ""
+        qwer = upperLabel.text!
+        label.text = String(model.findEqual(string: qwer))
         
-        if firstOperand != nil || magOperandOne != nil {
-            secondOperand = Double(String(label.text!))!
-            magOperandTwo = Double(String(label.text!))!
-            if action == .divide {
-                upperLabel.text = upperLabel.text! + label.text! + "=" + String(magOperandOne! / magOperandTwo)
-                label.text = ""
-            } else if action == .multiply {
-                upperLabel.text = upperLabel.text! + label.text! + "=" + String(magOperandOne! * magOperandTwo)
-                label.text = ""
-            } else if action == .substract {
-                upperLabel.text = upperLabel.text! + label.text! + "=" + String(firstOperand! - secondOperand)
-                label.text = ""
-            } else if action == .add {
-                upperLabel.text = upperLabel.text! + label.text! + "=" + String(firstOperand! + secondOperand)
-                label.text = ""
-            }
-        } else {
-            upperLabel.text = "ERROR you maggot"
-        }
-//        if magOperandTwo != nil {
-//            upperLabel.text = String(magOperandTwo! + equalOperand!)
-//        }
+        
         firstOperand = nil
         secondOperand = 0
         action = nil

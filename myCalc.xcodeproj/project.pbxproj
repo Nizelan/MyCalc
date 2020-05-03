@@ -106,7 +106,6 @@
 				99690C62245DC82F00220841 /* ViewControllers */,
 				99690C63245DC85E00220841 /* Supurt */,
 				995B791B2453458A005C864C /* Assets.xcassets */,
-				995B79202453458A005C864C /* Info.plist */,
 			);
 			path = myCalc;
 			sourceTree = "<group>";
@@ -140,6 +139,7 @@
 		99690C63245DC85E00220841 /* Supurt */ = {
 			isa = PBXGroup;
 			children = (
+				995B79202453458A005C864C /* Info.plist */,
 				995B79142453456B005C864C /* SceneDelegate.swift */,
 				995B79122453456B005C864C /* AppDelegate.swift */,
 			);
@@ -475,7 +475,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = myCalc/Info.plist;
+				DEVELOPMENT_TEAM = D34G97UXUT;
+				INFOPLIST_FILE = myCalc/Supurt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -492,7 +493,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = myCalc/Info.plist;
+				DEVELOPMENT_TEAM = D34G97UXUT;
+				INFOPLIST_FILE = myCalc/Supurt/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
