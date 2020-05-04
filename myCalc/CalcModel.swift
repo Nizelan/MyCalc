@@ -10,48 +10,51 @@ import UIKit
 
 class CalcModel {
     
-
+    var arrayOfString = [String]()
     
-    func isAction(character: Character) -> Bool {
-        return character == "/" || character == "*" || character == "-" || character == "+"
-    }
-    
-    public func findEqual(string: String) -> Double {
+    public func resolve(string: String) -> Double {
         var string = string
-        var value: Double = 0
-    
-        while string.contains("-") || string.contains("+") || string.contains("/") || string.contains("*") {
-            var first: String = ""
-            var second: String = ""
-            var action: Character?
+        
+        while string != "" {
+            var varible: String = ""
+            var char: String?
             
             for character in string {
-                if isAction(character: character) == false && action == nil {
-                    first += String(character)
+                if MathematicalOperation(rawValue: String(character)) == nil && char == nil {
+                    varible += String(character)
                     string.removeFirst(1)
-                } else if isAction(character: character) == true && action == nil{
-                    action = character
+                } else if MathematicalOperation(rawValue: String(character)) != nil && char == nil{
+                    char = String(character)
                     string.removeFirst(1)
-                } else if isAction(character: character) == false && action != nil {
-                    second += String(character)
-                    string.removeFirst(1)
-                } else if isAction(character: character) == true && action != nil {
+                } else if MathematicalOperation(rawValue: String(character)) == nil && char != nil {
                     break
                 }
             }
-            switch action {
+            arrayOfString.append(varible)
+            guard let action = char else { break }
+            arrayOfString.append(action)
+        }
+        
+        while arrayOfString.contains("/") || arrayOfString.contains("*") {
+            guard let i = arrayOfString.firstIndex(where: { $0 == "/" || $0 == "*"}) else { break }
+            switch arrayOfString[i] {
             case "/":
-                value = Double(first)! / Double(second)!
+                arrayOfString.replaceSubrange(i-1...i+1, with: repeatElement(String(Double(arrayOfString[i-1])! / Double(arrayOfString[i+1])!), count: 1))
             case "*":
-                value = Double(first)! * Double(second)!
-            case "-":
-                value = Double(first)! - Double(second)!
-            case "+":
-                value = Double(first)! + Double(second)!
+                arrayOfString.replaceSubrange(i-1...i+1, with: repeatElement(String(Double(arrayOfString[i-1])! * Double(arrayOfString[i+1])!), count: 1))
             default: break
             }
-            string = String(value) + string
         }
-        return value
+        while arrayOfString.contains("+") || arrayOfString.contains("-") {
+            guard let i = arrayOfString.firstIndex(where: { $0 == "+" || $0 == "-"}) else { break }
+            switch arrayOfString[i] {
+            case "+":
+                arrayOfString.replaceSubrange(i-1...i+1, with: repeatElement(String(Double(arrayOfString[i-1])! + Double(arrayOfString[i+1])!), count: 1))
+            case "-":
+                arrayOfString.replaceSubrange(i-1...i+1, with: repeatElement(String(Double(arrayOfString[i-1])! - Double(arrayOfString[i+1])!), count: 1))
+            default: break
+            }
+        }
+        return Double(arrayOfString[0])!
     }
 }

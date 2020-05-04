@@ -8,20 +8,14 @@
 
 import UIKit
 
-enum MathematicalOperation {
-    case add
-    case substract
-    case divide
-    case multiply
+enum MathematicalOperation: String {
+    case add = "+"
+    case substract = "-"
+    case divide = "/"
+    case multiply = "*"
 }
 
 class MainViewController: UIViewController {
-
-    var firstOperand: Double?
-    var secondOperand: Double = 0
-    var magOperandOne: Double?
-    var magOperandTwo: Double = 0
-    var equalOperand: Double?
     public var action: MathematicalOperation?
     
     let model = CalcModel()
@@ -33,12 +27,7 @@ class MainViewController: UIViewController {
     @IBAction func cleenButton(_ sender: UIButton) {
         label.text = ""
         upperLabel.text = ""
-        firstOperand = nil
-        magOperandOne = nil
-        magOperandTwo = 0
-        secondOperand = 0
         action = nil
-        equalOperand = nil
     }
     
     // Suport Buttons ligic
@@ -88,14 +77,7 @@ class MainViewController: UIViewController {
 // Equal Button ligic
     @IBAction func equalButton(_ sender: UIButton) {
         upperLabel.text = upperLabel.text! + label.text!
-        var qwer: String = ""
-        qwer = upperLabel.text!
-        label.text = String(model.findEqual(string: qwer))
-        
-        
-        firstOperand = nil
-        secondOperand = 0
-        action = nil
+        label.text = String(model.resolve(string: upperLabel.text!))
     }
 }
 
