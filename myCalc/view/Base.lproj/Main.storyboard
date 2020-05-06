@@ -163,7 +163,7 @@
                                 <rect key="frame" x="274.66666666666669" y="430" width="80.333333333333314" height="71.333333333333314"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
-                                <state key="normal" title="+">
+                                <state key="normal" title="⊕">
                                     <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
                                 <connections>
@@ -174,7 +174,7 @@
                                 <rect key="frame" x="274.66666666666669" y="353.66666666666669" width="80.333333333333314" height="71.333333333333314"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
-                                <state key="normal" title="-">
+                                <state key="normal" title="⊖">
                                     <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
                                 <connections>
@@ -185,7 +185,7 @@
                                 <rect key="frame" x="274.66666666666669" y="277.33333333333331" width="80.333333333333314" height="71.333333333333314"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
-                                <state key="normal" title="x">
+                                <state key="normal" title="⊗">
                                     <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
                                 <connections>
@@ -218,7 +218,7 @@
                                 <rect key="frame" x="274.66666666666669" y="201" width="80.333333333333314" height="71.333333333333314"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
-                                <state key="normal" title="÷">
+                                <state key="normal" title="⊘">
                                     <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
                                 <connections>
@@ -243,6 +243,17 @@
                                 </state>
                                 <connections>
                                     <action selector="numberButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uyH-Ss-4Us"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rXH-ue-gaI">
+                                <rect key="frame" x="20" y="582.66666666666663" width="335" height="71.333333333333371"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                <state key="normal" title="^">
+                                    <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="powerButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="epL-md-xYL"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -284,16 +295,19 @@
                             <constraint firstItem="X1g-VI-Kdu" firstAttribute="leading" secondItem="h6E-eP-peW" secondAttribute="trailing" constant="5" id="P4Q-Es-408"/>
                             <constraint firstItem="lcM-rj-x7c" firstAttribute="leading" secondItem="Vu2-Gb-7ev" secondAttribute="trailing" constant="4" id="Pgp-2a-yhg"/>
                             <constraint firstItem="UeS-J1-xnP" firstAttribute="width" secondItem="sg5-no-djw" secondAttribute="width" id="Pi9-Fn-Sc6"/>
+                            <constraint firstItem="rXH-ue-gaI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="PqH-nl-evM"/>
                             <constraint firstItem="0Hq-96-DUm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="QBN-01-wkm"/>
                             <constraint firstItem="h6E-eP-peW" firstAttribute="height" secondItem="sg5-no-djw" secondAttribute="height" id="QTM-9G-7vZ"/>
                             <constraint firstItem="Abd-4e-Sjv" firstAttribute="leading" secondItem="SzJ-xS-YD1" secondAttribute="trailing" constant="5" id="Qva-uO-whc"/>
                             <constraint firstItem="cwI-s6-rp0" firstAttribute="top" secondItem="Lc4-bj-C4u" secondAttribute="bottom" constant="5" id="QwX-zm-rKa"/>
+                            <constraint firstItem="rXH-ue-gaI" firstAttribute="top" secondItem="m9Y-lj-O4N" secondAttribute="bottom" constant="5" id="SC2-42-BlM"/>
                             <constraint firstItem="QHE-K6-1sK" firstAttribute="width" secondItem="sg5-no-djw" secondAttribute="width" id="SZR-Bw-IKY"/>
                             <constraint firstItem="MLW-1s-nJv" firstAttribute="height" secondItem="sg5-no-djw" secondAttribute="height" id="TXk-tA-UWO"/>
                             <constraint firstItem="X1g-VI-Kdu" firstAttribute="top" secondItem="pB8-pO-jdg" secondAttribute="bottom" constant="5" id="Uop-vO-6Mn"/>
                             <constraint firstItem="sg5-no-djw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Uv3-ia-EN2"/>
                             <constraint firstItem="pB8-pO-jdg" firstAttribute="top" secondItem="Lc4-bj-C4u" secondAttribute="bottom" constant="5" id="UvL-Gy-zoo"/>
                             <constraint firstItem="0Hq-96-DUm" firstAttribute="width" secondItem="sg5-no-djw" secondAttribute="width" id="V13-Ng-3jT"/>
+                            <constraint firstItem="rXH-ue-gaI" firstAttribute="height" secondItem="sg5-no-djw" secondAttribute="height" id="VNQ-T9-53z"/>
                             <constraint firstItem="UeS-J1-xnP" firstAttribute="top" secondItem="hHt-tu-S0E" secondAttribute="bottom" constant="5" id="W3H-2G-Io8"/>
                             <constraint firstItem="MLW-1s-nJv" firstAttribute="top" secondItem="9kh-LF-CQY" secondAttribute="bottom" constant="5" id="XY5-uX-hAW"/>
                             <constraint firstItem="QHE-K6-1sK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Zeh-d9-AA4"/>
@@ -312,6 +326,7 @@
                             <constraint firstItem="SzJ-xS-YD1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="eMZ-vC-iRy"/>
                             <constraint firstItem="SzJ-xS-YD1" firstAttribute="top" secondItem="MLW-1s-nJv" secondAttribute="bottom" constant="5" id="fDI-nz-a1L"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lcM-rj-x7c" secondAttribute="trailing" constant="20" id="fdf-hx-qK0"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rXH-ue-gaI" secondAttribute="trailing" constant="20" id="gFz-V3-Ldb"/>
                             <constraint firstItem="SzJ-xS-YD1" firstAttribute="top" secondItem="MLW-1s-nJv" secondAttribute="bottom" constant="5" id="gO2-9a-Pwd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="m9Y-lj-O4N" secondAttribute="trailing" constant="20" id="iZe-bt-XaP"/>
                             <constraint firstItem="Abd-4e-Sjv" firstAttribute="top" secondItem="Vu2-Gb-7ev" secondAttribute="bottom" constant="5" id="ili-AY-n7M"/>
@@ -345,7 +360,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.8840579710145" y="129.91071428571428"/>
+            <point key="canvasLocation" x="130.40000000000001" y="129.31034482758622"/>
         </scene>
     </scenes>
     <resources>

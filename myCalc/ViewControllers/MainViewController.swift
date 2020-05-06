@@ -13,6 +13,7 @@ enum MathematicalOperation: String {
     case substract = "-"
     case divide = "/"
     case multiply = "*"
+    case power = "^"
 }
 
 class MainViewController: UIViewController {
@@ -71,6 +72,11 @@ class MainViewController: UIViewController {
     @IBAction func additButton(_ sender: UIButton) {
         action = .add
         upperLabel.text = upperLabel.text! + label.text! + "+"
+        label.text = ""
+    }
+    @IBAction func powerButton(_ sender: UIButton) {
+        action = .power
+        upperLabel.text = upperLabel.text! + label.text! + "^"
         label.text = ""
     }
     

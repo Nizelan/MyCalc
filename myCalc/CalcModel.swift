@@ -10,10 +10,9 @@ import UIKit
 
 class CalcModel {
     
-    var arrayOfString = [String]()
-    
     public func resolve(string: String) -> Double {
         var string = string
+        var arrayOfString = [String]()
         
         while string != "" {
             var varible: String = ""
@@ -35,6 +34,16 @@ class CalcModel {
             arrayOfString.append(action)
         }
         
+        while arrayOfString.contains("^") {
+            guard let i = arrayOfString.firstIndex(where: { $0 == "^" }) else { break }
+            switch arrayOfString[i] {
+            case "^":
+                arrayOfString.replaceSubrange(i-1...i+1,
+                                            with: repeatElement(String(pow(Double(arrayOfString[i-1])!, Double(arrayOfString[i+1])!)),
+                                            count: 1))
+            default: break
+            }
+        }
         while arrayOfString.contains("/") || arrayOfString.contains("*") {
             guard let i = arrayOfString.firstIndex(where: { $0 == "/" || $0 == "*"}) else { break }
             switch arrayOfString[i] {
