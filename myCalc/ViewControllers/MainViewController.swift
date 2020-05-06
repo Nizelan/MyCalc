@@ -39,7 +39,12 @@ class MainViewController: UIViewController {
         label.text = "-" + label.text!
     }
     @IBAction func backspaceButton(_ sender: UIButton) {
-        label.text = String(label.text!.dropLast(1))
+        if label.text != "" {
+            label.text = String(label.text!.dropLast(1))
+        } else {
+            upperLabel.text = String(upperLabel.text!.dropLast(1))
+        }
+        
     }
     
     // Number Buttons
@@ -82,8 +87,12 @@ class MainViewController: UIViewController {
     
 // Equal Button ligic
     @IBAction func equalButton(_ sender: UIButton) {
-        upperLabel.text = upperLabel.text! + label.text!
-        label.text = String(model.resolve(string: upperLabel.text!))
+        if upperLabel.text == "" {
+            upperLabel.text = "ERROR you maggot"
+        } else {
+            upperLabel.text = upperLabel.text! + label.text!
+            label.text = String(model.resolve(string: upperLabel.text!))
+        }
     }
 }
 
