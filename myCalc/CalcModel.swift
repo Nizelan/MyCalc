@@ -13,8 +13,8 @@ class CalcModel {
     public func resolve(string: String) -> Double {
         var string = string
         var arrayOfString = [String]()
-        var operationPriority: [[MathematicalOperation]] =
-            [[.power, .power], [.divide, .multiply], [.add, .substract]]
+        let operationPriority: [MathematicalOperation] =
+            [.power, .divide, .multiply, .add, .substract]
         
         while string != "" {
             var varible: String = ""
@@ -36,34 +36,17 @@ class CalcModel {
             arrayOfString.append(action)
         }
         
-        for i in 0..<operationPriority.count {
+        for x in 0..<operationPriority.count {
             
-            while arrayOfString.contains(where: { $0 == operationPriority[i][0].rawValue || $0 == operationPriority[i][1].rawValue })  {
+            while arrayOfString.contains(operationPriority[x].rawValue) {
+                guard let i = arrayOfString.firstIndex(where: { $0 == operationPriority[x].rawValue }) else { break }
                 if let operation = MathematicalOperation(rawValue: arrayOfString[i]) {
                     let result = calculate(operand: Double(arrayOfString[i-1])!, operand2: Double(arrayOfString[i+1])!, operation: operation)
                     arrayOfString.replaceSubrange(i-1...i+1, with: repeatElement(String(result), count: 1))
                 }
             }
+            
         }
-        
-//        while arrayOfString.contains("^") {
-//            guard let i = arrayOfString.firstIndex(where: { $0 == "^" }) else { break }
-//
-//        }
-//        while arrayOfString.contains("*") || arrayOfString.contains("/") {
-//            guard let i = arrayOfString.firstIndex(where: { $0 == "*" || $0 == "/"}) else { break }
-//            if let operation = MathematicalOperation(rawValue: arrayOfString[i]) {
-//                let result = calculate(operand: Double(arrayOfString[i-1])!, operand2: Double(arrayOfString[i+1])!, operation: operation)
-//                arrayOfString.replaceSubrange(i-1...i+1, with: repeatElement(String(result), count: 1))
-//            }
-//        }
-//        while arrayOfString.contains("+") || arrayOfString.contains("-") {
-//            guard let i = arrayOfString.firstIndex(where: { $0 == "+" || $0 == "-"}) else { break }
-//            if let operation = MathematicalOperation(rawValue: arrayOfString[i]) {
-//                let result = calculate(operand: Double(arrayOfString[i-1])!, operand2: Double(arrayOfString[i+1])!, operation: operation)
-//                arrayOfString.replaceSubrange(i-1...i+1, with: repeatElement(String(result), count: 1))
-//            }
-//        }
         return Double(arrayOfString[0])!
     }
     
