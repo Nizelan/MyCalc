@@ -13,8 +13,8 @@ class CalcModel {
     public func resolve(string: String) -> Double {
         var string = string
         var arrayOfString = [String]()
-        let operationPriority: [MathematicalOperation] =
-            [.power, .divide, .multiply, .add, .substract]
+        let operationPriority: [[MathematicalOperation]] =
+            [[.power, .power], [.divide, .multiply], [.add, .substract]]
         
         while string != "" {
             var varible: String = ""
@@ -37,9 +37,8 @@ class CalcModel {
         }
         
         for x in 0..<operationPriority.count {
-            
-            while arrayOfString.contains(operationPriority[x].rawValue) {
-                guard let i = arrayOfString.firstIndex(where: { $0 == operationPriority[x].rawValue }) else { break }
+            while arrayOfString.contains(where: { $0 == operationPriority[x][0].rawValue || $0 == operationPriority[x][1].rawValue}) {
+                guard let i = arrayOfString.firstIndex(where: { $0 == operationPriority[x][0].rawValue || $0 == operationPriority[x][1].rawValue }) else { break }
                 if let operation = MathematicalOperation(rawValue: arrayOfString[i]) {
                     let result = calculate(operand: Double(arrayOfString[i-1])!, operand2: Double(arrayOfString[i+1])!, operation: operation)
                     arrayOfString.replaceSubrange(i-1...i+1, with: repeatElement(String(result), count: 1))
