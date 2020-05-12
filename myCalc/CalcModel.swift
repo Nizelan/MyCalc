@@ -20,7 +20,7 @@ class CalcModel {
         if arrayOfString.contains("(") {
             let i = arrayOfString.firstIndex(of: "(")!
             let y = arrayOfString.lastIndex(of: ")")!
-            arrayOfString.replaceSubrange(i...y, with: findUrHalf(array: arrayOfString))
+            arrayOfString.replaceSubrange(i...y, with: [findUrHalf(array: arrayOfString)])
         }
         
         for operations in operationPriority {
