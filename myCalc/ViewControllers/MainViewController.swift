@@ -14,6 +14,8 @@ enum MathematicalOperation: String {
     case divide = "/"
     case multiply = "*"
     case power = "^"
+    case leftBracket = "("
+    case rightBracket = ")"
 }
 
 class MainViewController: UIViewController {
@@ -44,8 +46,18 @@ class MainViewController: UIViewController {
         } else {
             upperLabel.text = String(upperLabel.text!.dropLast(1))
         }
-        
     }
+    @IBAction func leftButton(_ sender: UIButton) {
+        label.text = label.text! + "("
+    }
+    @IBAction func rightButton(_ sender: UIButton) {
+        label.text = label.text! + ")"
+    }
+    @IBAction func secretButton(_ sender: UIButton) {
+        label.text = "I see you"
+    }
+    
+    
     
     // Number Buttons
     @IBAction func numberButton(_ sender: UIButton) {

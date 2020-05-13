@@ -18,9 +18,36 @@ class CalcModel {
         arrayOfString = stringAsArray(string: string)
         
         if arrayOfString.contains("(") {
+            while arrayOfString.contains("") {
+                let i = arrayOfString.firstIndex(of: "")!
+                arrayOfString.remove(at: i)
+            }
+            var openBracket = 0
+            var clouseBracket = 0
+            var elementsInBrack: String = ""
+            var clouseIndex = 0
+            var isFirstBrack = true
+            
+            for index in 0..<arrayOfString.count {
+                if arrayOfString[index] == "(" && isFirstBrack == true {
+                    openBracket += 1
+                    isFirstBrack = false
+                }
+                if openBracket > clouseBracket {
+                    elementsInBrack += arrayOfString[index]
+                }
+                if arrayOfString[index] == ")" {
+                    clouseBracket += 1
+                }
+                if openBracket == clouseBracket {
+                    elementsInBrack = String(elementsInBrack.dropFirst())
+                    elementsInBrack = String(elementsInBrack.dropLast())
+                    elementsInBrack = String(resolve(string: elementsInBrack))
+                    clouseIndex = index
+                }
+            }
             let i = arrayOfString.firstIndex(of: "(")!
-            let y = arrayOfString.lastIndex(of: ")")!
-            arrayOfString.replaceSubrange(i...y, with: [findUrHalf(array: arrayOfString)])
+            arrayOfString.replaceSubrange(i...clouseIndex, with: [elementsInBrack])
         }
         
         for operations in operationPriority {
@@ -52,6 +79,8 @@ class CalcModel {
             return operand / operand2
         case .power:
             return pow(operand, operand2)
+        default:
+            return 0.0
         }
     }
     
@@ -97,7 +126,7 @@ class CalcModel {
                 clouseBracket += 1
             }
             if openBracket == clouseBracket {
-                return String(resolve(string: elementsInBrack))
+                return String()
             }
         }
         return elementsInBrack
