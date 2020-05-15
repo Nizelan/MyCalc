@@ -18,36 +18,35 @@ class CalcModel {
         arrayOfString = stringAsArray(string: string)
         
         if arrayOfString.contains("(") {
-            while arrayOfString.contains("") {
-                let i = arrayOfString.firstIndex(of: "")!
-                arrayOfString.remove(at: i)
-            }
-            var openBracket = 0
-            var clouseBracket = 0
+            var brackets = 0
             var elementsInBrack: String = ""
-            var clouseIndex = 0
-            var isFirstBrack = true
+            var elementsCount = 0
+            var index = 0
             
-            for index in 0..<arrayOfString.count {
-                if arrayOfString[index] == "(" && isFirstBrack == true {
-                    openBracket += 1
-                    isFirstBrack = false
+            while arrayOfString.contains("(") {
+                if arrayOfString[index] == "(" {
+                    if brackets == 0 {
+                        brackets += 1
+                        index += 1
+                        continue
+                    } else {
+                        brackets += 1
+                    }
+                } else if arrayOfString[index] == ")" {
+                    brackets -= 1
                 }
-                if openBracket > clouseBracket {
+                
+                if brackets > 0 {
                     elementsInBrack += arrayOfString[index]
+                    elementsCount += 1
+                } else if brackets <= 0 {
+                    let i = arrayOfString.firstIndex(of: "(")!
+                    arrayOfString.replaceSubrange(i...i + elementsCount + 1, with: [String(resolve(string: elementsInBrack))])
+                    elementsCount = 0
+                    index = 0
                 }
-                if arrayOfString[index] == ")" {
-                    clouseBracket += 1
-                }
-                if openBracket == clouseBracket {
-                    elementsInBrack = String(elementsInBrack.dropFirst())
-                    elementsInBrack = String(elementsInBrack.dropLast())
-                    elementsInBrack = String(resolve(string: elementsInBrack))
-                    clouseIndex = index
-                }
+                index += 1
             }
-            let i = arrayOfString.firstIndex(of: "(")!
-            arrayOfString.replaceSubrange(i...clouseIndex, with: [elementsInBrack])
         }
         
         for operations in operationPriority {
@@ -103,7 +102,9 @@ class CalcModel {
                     break
                 }
             }
-            array.append(varible)
+            if varible != "" {
+                array.append(varible)
+            }
             guard let action = char else { break }
             array.append(action)
         }
